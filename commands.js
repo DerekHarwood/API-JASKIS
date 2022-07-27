@@ -80,7 +80,28 @@ db.bounties.find({reward: {$gte: 10000}})
   reward: 50000,
   captured: false }
 // 3. Query for all bounties, but exclude the client attribute from being shown
-
+db.bounties.find({}, {client: 0})
+{ _id: ObjectId("62e073d53cdb0a55010daa42"),
+  name: 'Polarwind',
+  species: 'Polar Bear',
+  location: 'Arctic',
+  wantedFor: 'Not hibernating',
+  reward: 10000,
+  captured: true }
+{ _id: ObjectId("62e074173cdb0a55010daa43"),
+  name: 'Wrecking Crows',
+  species: 'Crow',
+  location: 'Grasslands',
+  wantedFor: 'Cawing too loudly',
+  reward: 40000,
+  captured: true }
+{ _id: ObjectId("62e0755d3cdb0a55010daa45"),
+  name: 'Grim Panda',
+  species: 'Giant Panda',
+  location: 'Temperate forest',
+  wantedFor: 'Eating all the bamboo',
+  reward: 5000,
+  captured: true }
 // 4. Query for a Groundhog in the Woodlands
 db.bounties.find({
   species: "Groundhog",
